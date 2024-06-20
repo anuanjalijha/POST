@@ -2,7 +2,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 
-// import productRouter from './src/features/product/product.routes.js';
+import postRouter from './src/features/post/post.routes.js';
 import userRouter from './src/features/user/user.routes.js';
 import jwtAuth from './src/middlewares/jwt.middleware.js';
 // import cartRouter from './src/features/cartItems/cartItems.routes.js';
@@ -21,6 +21,7 @@ dotenv.config();
 
 server.use(express.json());
 server.use('/api/users',userRouter);
+server.use('/api/posts',jwtAuth,postRouter);
 // Bearer <token>
 // for all requests related to product, redirect to product routes.
 // localhost:3200/api/products
