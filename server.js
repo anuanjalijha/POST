@@ -11,6 +11,7 @@ import { ApplicationError } from './src/error-handler/applicationError.js';
 // import orderRouter from './src/features/order/order.routes.js';
 import { connectUsingMongoose } from './src/config/mongooseConfig.js';
 import mongoose from 'mongoose';
+import commentRouter from './src/features/comment/comment.routes.js';
 // import likeRouter from './src/features/like/like.routes.js';
 
 // 2. Create Server
@@ -22,6 +23,7 @@ dotenv.config();
 server.use(express.json());
 server.use('/api/users',userRouter);
 server.use('/api/posts',jwtAuth,postRouter);
+server.use('/api/comments',jwtAuth,commentRouter);
 // Bearer <token>
 // for all requests related to product, redirect to product routes.
 // localhost:3200/api/products

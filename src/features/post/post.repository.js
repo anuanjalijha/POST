@@ -1,4 +1,4 @@
-import mongoose, { trusted } from "mongoose";
+import mongoose from "mongoose";
 import { userSchema } from "../user/user.schema.js";
 import { postSchema } from "./post.schema.js";
 
